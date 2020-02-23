@@ -47,6 +47,6 @@ while read dbname; do # Loop the result
 	# Check for retention paramter
 	if [ ! -z $3 ]; then
 		# Clear old backups
-		find $2/* -mtime +$3 -exec rm {} \;
+		find $2/"$dbname".* -mtime +$3 -exec rm {} \;
 	fi
 done
